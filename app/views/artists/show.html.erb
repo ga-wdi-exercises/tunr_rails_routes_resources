@@ -1,0 +1,14 @@
+<h2><%= @artist.name %> <%= link_to "(edit)", edit_artist_path(@artist) %></h2>
+<h4><%= @artist.nationality %></h4>
+
+<%= image_tag @artist.photo_url, class: "artist-photo" %>
+
+<h3>Songs <%= link_to "(+)", new_song_path %></h3>
+
+<ul>
+  <% @artist.songs.each do |song| %>
+    <li>
+      <%= link_to "#{song.title} (#{song.album})", song %>
+    </li>
+  <% end %>
+</ul>

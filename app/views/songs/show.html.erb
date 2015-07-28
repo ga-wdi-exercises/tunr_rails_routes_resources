@@ -1,0 +1,6 @@
+<h2><%= @song.title %> <%= link_to "(edit)", edit_song_path(@song) %></h2>
+<h3>By: <%= @song.artist.name %></h3>
+
+Album: <%= @song.album %></br>
+
+<audio controls src="<%= @song.preview_url %>"></audio>
