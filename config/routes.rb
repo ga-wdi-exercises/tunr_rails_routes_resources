@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :artists
   resources :songs
 
+
+    
   # # artists routes
   # get     '/artists',          to: 'artists#index'
   # get     '/artists/new',      to: 'artists#new'
