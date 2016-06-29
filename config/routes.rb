@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root to: 'artists#index'
 
-  resources :artists
-  resources :songs
+  resources :artists do
+    resources :songs
+  end
 
 
-    
   # # artists routes
   # get     '/artists',          to: 'artists#index'
   # get     '/artists/new',      to: 'artists#new'
