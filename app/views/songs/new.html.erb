@@ -1,6 +1,6 @@
 <h2>New Song</h2>
 
-<%= form_for @song do |f| %>
+<%= form_for [@artist, @song] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -9,9 +9,6 @@
 
   <%= f.label :preview_url %>
   <%= f.text_field :preview_url %>
-
-  <%= f.label :artist_id %>
-  <%= f.text_field :artist_id %>
 
   <%= f.submit %>
 <% end %>
