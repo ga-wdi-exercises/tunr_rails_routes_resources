@@ -1,28 +1,24 @@
 Rails.application.routes.draw do
   root to: 'artists#index'
 
-  resources :artists
-  resources :songs
+  # resources :artists
+  # resources :songs
 
+  # `resources :artists` generates the following routes
+  get    '/artists'           => 'artists#index'
+  get    '/artists/new'       => 'artists#new', as: "new_artist"
+  get    '/artists/:id'       => 'artists#show', as: "artist"
+  post   '/artists'           => 'artists#create'
+  get    '/artists/:id/edit'  => 'artists#edit', as: "edit_artist"
+  patch    '/artists/:id'       => 'artists#update'
+  delete '/artists/:id'       => 'artists#destroy'
 
-    
-  # # artists routes
-  # get     '/artists',          to: 'artists#index'
-  # get     '/artists/new',      to: 'artists#new'
-  # post    '/artists',          to: 'artists#create'
-  #
-  # get     '/artists/:id',      to: 'artists#show'
-  # get     '/artists/:id/edit', to: 'artists#edit'
-  # put     '/artists/:id',      to: 'artists#update'
-  # delete  '/artists/:id',      to: 'artists#destroy'
-  #
-  # # songs routes
-  # get     '/songs',          to: 'songs#index'
-  # get     '/songs/new',      to: 'songs#new'
-  # post    '/songs',          to: 'songs#create'
-  #
-  # get     '/songs/:id',      to: 'songs#show'
-  # get     '/songs/:id/edit', to: 'songs#edit'
-  # put     '/songs/:id',      to: 'songs#update'
-  # delete  '/songs/:id',      to: 'songs#destroy'
+  # `resources :songs` generates the following routes
+  get    '/songs'           => 'songs#index'
+  get    '/songs/new'       => 'songs#new', as: "new_song"
+  get    '/songs/:id'       => 'songs#show', as: "song"
+  post   '/songs'           => 'songs#create'
+  get    '/songs/:id/edit'  => 'songs#edit', as: "edit_song"
+  patch    '/songs/:id'       => 'songs#update'
+  delete '/songs/:id'       => 'songs#destroy'
 end
