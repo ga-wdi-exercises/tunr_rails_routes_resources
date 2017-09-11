@@ -1,5 +1,4 @@
 class ArtistsController < ApplicationController
-  # index
   def index
     @artists = Artist.all
   end
@@ -12,7 +11,6 @@ class ArtistsController < ApplicationController
   # create
   def create
     @artist = Artist.create!(artist_params)
-
     redirect_to artist_path(@artist)
   end
 

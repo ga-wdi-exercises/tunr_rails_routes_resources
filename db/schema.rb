@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -17,21 +16,20 @@ ActiveRecord::Schema.define(version: 20150726150946) do
   enable_extension "plpgsql"
 
   create_table "artists", force: :cascade do |t|
-    t.string   "name"
-    t.string   "photo_url"
-    t.string   "nationality"
+    t.string "name"
+    t.string "photo_url"
+    t.string "nationality"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "songs", force: :cascade do |t|
-    t.string  "title"
-    t.string  "album"
-    t.string  "preview_url"
-    t.integer "artist_id"
+    t.string "title"
+    t.string "album"
+    t.string "preview_url"
+    t.bigint "artist_id"
+    t.index ["artist_id"], name: "index_songs_on_artist_id"
   end
-
-  add_index "songs", ["artist_id"], name: "index_songs_on_artist_id", using: :btree
 
   add_foreign_key "songs", "artists"
 end

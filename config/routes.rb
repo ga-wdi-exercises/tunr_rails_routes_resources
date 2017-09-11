@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   root to: 'artists#index'
+  
+  get 'show_session' => 'sessions#index'
+  get 'set_session' => 'sessions#set_session'
+  get 'another' => 'sessions#another'
 
   resources :artists do
     resources :songs, except: [:index]
   end
+
 
 
   # # artists routes
